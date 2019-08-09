@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>手风琴</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding:0;
+			list-style: none;
+		}
+		.wrap{
+			width:1178px;
+			height:174px;
+			overflow: hidden;
+			position: relative;
+			margin:0 auto;
+		}
+		.wrap ul li{
+			float:left;
+			width: 210px;
+			height: 174px;
+			overflow: hidden;
+		}
+		.wrap ul li img{
+			width:550px;
+			height: 174px;
+		}
+		.wrap ul{
+			width:2000px;
+		}
+	</style>
+</head>
+<body>
+<div class="wrap">
+     <ul>
+        <li style='width:550px'><img src="./img/377_8180.jpg"></li>
+        <li ><img src="./img/377_8155.jpg"></li>
+        <li ><img src="./img/377_8288.jpg"></li>
+        <li ><img src="./img/377_7937.jpg"></li>
+    </ul>
+</div>
+<script type="text/javascript" src="../lib/jquery1.12.4.js"></script>
+<script type="text/javascript">
+	//需求分析:当鼠标移入某个li,该li宽度550,其他li宽度210
+	$(function(){
+		$('li').mouseover(function(){
+			$(this).stop().animate({
+				"width":"550"
+			}).siblings().stop().animate({
+				"width":"210"
+			})
+		})
+	})
+</script>
+</body>
+</html>
